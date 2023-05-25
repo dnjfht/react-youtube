@@ -1,12 +1,20 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Home from "../../learn-router/src/pages/Home";
 import NotFoundPage from "../../learn-router/src/pages/NotFoundPage";
+import Root from "./pages/Root";
+import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 
 function App() {
   const router = createBrowserRouter([
-    { path: "/", element: <Home />, errorElement: <NotFoundPage /> },
-    { path: "/:id", element: <Detail />, errorElement: <NotFoundPage /> },
+    {
+      path: "/",
+      element: <Root />,
+      errorElement: <NotFoundPage />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: "/:id", element: <Detail /> },
+      ],
+    },
   ]);
 
   return <RouterProvider router={router} />;
