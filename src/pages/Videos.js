@@ -5,7 +5,6 @@ import axios from "axios";
 
 export default function Videos() {
   const { keyword } = useParams();
-  console.log(keyword);
 
   const {
     isLoading,
@@ -23,8 +22,6 @@ export default function Videos() {
       .then((res) => res.data.items);
   });
 
-  console.log(videos);
-
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Something is wrong...😔</p>;
   return (
@@ -33,8 +30,8 @@ export default function Videos() {
         Videos {keyword ? `🔍${keyword}` : "🔥"}
         {videos && (
           <ul>
-            {videos.map((video) => (
-              <VideoCard key={video.id} video={video} />
+            {videos.map((video, i) => (
+              <VideoCard key={i} video={video} />
             ))}
           </ul>
         )}
