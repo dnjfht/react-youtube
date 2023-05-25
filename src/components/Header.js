@@ -3,11 +3,13 @@ import { AiFillYoutube } from "react-icons/ai";
 import { ImYoutube2 } from "react-icons/im";
 import { IoIosSearch } from "react-icons/io";
 import { BsFillKeyboardFill } from "react-icons/bs";
+import { CiLight, CiDark } from "react-icons/ci";
 import { useNavigate, useParams } from "react-router-dom";
 
 export default function Header() {
   const [appear, setAppear] = useState(false);
   const [title, setTitle] = useState("");
+  const [dark, setDark] = useState(true);
 
   const navigate = useNavigate();
   const { keyword } = useParams();
@@ -35,7 +37,7 @@ export default function Header() {
             navigate("/");
           }}
         >
-          <AiFillYoutube className="text-6xl text-red-600" />
+          <AiFillYoutube className="text-6xl text-brand" />
           <ImYoutube2 className="text-6xl text-white" />
         </div>
         <div className="flex flex-row items-center mx-auto">
@@ -50,9 +52,9 @@ export default function Header() {
               placeholder="검색"
               className={`${
                 appear
-                  ? "w-[576px] pl-[48px] border-[#4a7dff]"
-                  : "w-[540px] pl-[16px] border-[rgb(203 213 225)]"
-              } h-10 bg-[#121212] rounded-l-full pr-1 box-border border-solid border-[1px] outline-none placeholder:text-[#888888] text-white`}
+                  ? "w-[36rem] pl-[3rem] border-[#4a7dff]"
+                  : "w-[33.75rem] pl-[1rem] border-[#303030]"
+              } h-[40px] bg-[#121212] rounded-l-full pr-1 box-border border-solid border-[0.6px] outline-none placeholder:text-[#888888] text-white`}
               onFocus={() => {
                 setAppear(true);
               }}
@@ -73,6 +75,19 @@ export default function Header() {
             <IoIosSearch className="text-[1.5rem] text-white" />
           </button>
         </div>
+
+        <button
+          onClick={() => {
+            setDark((prev) => !prev);
+          }}
+          className="border-none bg-transparent"
+        >
+          {dark ? (
+            <CiDark className="text-white text-[30px]" />
+          ) : (
+            <CiLight className="text-white text-[30px]" />
+          )}
+        </button>
       </div>
     </div>
   );
