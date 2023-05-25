@@ -1,9 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import VideoCard from "../components/VideoCard";
+import axios from "axios";
 
 export default function Videos() {
   const { keyword } = useParams();
+  console.log(keyword);
 
   const {
     isLoading,
@@ -16,9 +18,9 @@ export default function Videos() {
       console.log("fetching... Hot Trend!");
     }
 
-    return fetch(`/data/${keyword ? "ListByKeyword" : "ListByTrendVideo"}.json`)
-      .then((res) => res.json())
-      .then((data) => data.items);
+    return axios
+      .get(`/data/${keyword ? "ListByKeyword" : "ListByTrendVideo"}.json`)
+      .then((res) => res.data.items);
   });
 
   console.log(videos);
