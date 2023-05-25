@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import NotFoundPage from "../../learn-router/src/pages/NotFoundPage";
+import NotFoundPage from "./pages/NotFoundPage";
 import Root from "./pages/Root";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
