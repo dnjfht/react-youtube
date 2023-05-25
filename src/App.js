@@ -3,7 +3,6 @@ import NotFoundPage from "./pages/NotFoundPage";
 import Root from "./pages/Root";
 import Detail from "./pages/Detail";
 import Videos from "./pages/Videos";
-import SearchVideos from "./pages/SearchVideos";
 
 function App() {
   const router = createBrowserRouter([
@@ -13,8 +12,8 @@ function App() {
       children: [
         { index: true, element: <Videos /> },
         { path: "/videos", element: <Videos /> },
-        { path: "/videos/:id", element: <SearchVideos /> },
-        { path: "/videos/watch/:id", element: <Detail /> },
+        { path: "/videos/:keyword", element: <Videos /> },
+        { path: "/videos/watch/:videoId", element: <Detail /> },
         { path: "*", element: <NotFoundPage /> },
       ],
     },
