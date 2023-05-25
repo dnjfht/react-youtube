@@ -3,14 +3,22 @@ import { AiFillYoutube } from "react-icons/ai";
 import { ImYoutube2 } from "react-icons/im";
 import { IoIosSearch } from "react-icons/io";
 import { BsFillKeyboardFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [appear, setAppear] = useState(false);
 
+  const navigate = useNavigate();
+
   return (
     <div className=" w-100% h-[3.75rem] bg-[#0f0f0f] mx-auto">
       <div className="w-[81.25rem] h-[100%] mx-auto flex flex-row items-center justify-between p-2 pr-[36]px box-border border-solid border-b-[1px] border-[#ffffff36] ">
-        <div className="flex flex-row">
+        <div
+          className="flex flex-row hover:cursor-pointer"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           <AiFillYoutube className="text-6xl text-red-600" />
           <ImYoutube2 className="text-6xl text-white" />
         </div>
