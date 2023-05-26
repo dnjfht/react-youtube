@@ -38,7 +38,7 @@ export default function Header() {
     >
       <div
         className={`${
-          darkMode ? "border-[#ffffff36]" : "border-[#7d7d7d36]"
+          darkMode ? "border-[#ffffff36]" : "border-[#7b7b7b7e]"
         } w-[81.25rem] h-[100%] mx-auto flex flex-row items-center justify-between p-2 pr-[36]px box-border border-solid border-b-[1px]`}
       >
         <div
@@ -57,7 +57,7 @@ export default function Header() {
             <IoIosSearch
               className={`${
                 appear ? "block" : "hidden "
-              } absolute top-[50%] mt-[-10px] left-[15px] text-[20px] text-[#bebebe]`}
+              } absolute top-[50%] mt-[-10px] left-[15px] text-[20px] text-[#717171]`}
             />
             <input
               type="text"
@@ -66,8 +66,12 @@ export default function Header() {
                 appear
                   ? "w-[36rem] pl-[3rem] border-[#4a7dff]"
                   : "w-[33.75rem] pl-[1rem] border-[#303030]"
-              } h-[40px]  rounded-l-full pr-1 box-border border-solid border-[0.6px] outline-none placeholder:text-[#888888] text-white
-              ${darkMode ? "bg-[#121212]" : "bg-[#ececec]"}`}
+              } h-[40px]  rounded-l-full pr-1 box-border border-solid border-[0.6px] placeholder:text-[#888888] outline-none  
+              ${
+                darkMode
+                  ? "bg-[#121212] text-white"
+                  : "bg-[#dadadab8] text-black"
+              }`}
               onFocus={() => {
                 setAppear(true);
               }}
@@ -82,10 +86,14 @@ export default function Header() {
 
           <button
             type="button"
-            className="w-[4rem] h-[2.5rem] bg-[#ffffff14] px-[1px] py-[6px] rounded-r-full box-border flex flex-row justify-center items-center border-solid border-[1px] border-[#ffffff36]"
+            className={`${
+              darkMode
+                ? "border-[#ffffff36] bg-[#ffffff14]"
+                : "border-[#303030] bg-[#383838b8]"
+            } w-[4rem] h-[2.5rem] px-[1px] py-[6px] rounded-r-full box-border flex flex-row justify-center items-center border-solid border-[1px]`}
             onClick={handleClickSearchBtn}
           >
-            <IoIosSearch className="text-[1.5rem] text-white" />
+            <IoIosSearch className="text-white text-[1.5rem]" />
           </button>
         </div>
 

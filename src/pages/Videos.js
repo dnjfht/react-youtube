@@ -3,9 +3,13 @@ import { useParams } from "react-router-dom";
 import VideoCard from "../components/VideoCard";
 // import { search } from "../api/youtube";
 import FakeYoutube from "../api/fakeYoutube";
+import { useContext } from "react";
+import { DarkModeContext } from "../provider/DarkModeContext";
 
 export default function Videos() {
   const { keyword } = useParams();
+
+  const { darkMode } = useContext(DarkModeContext);
 
   const {
     isLoading,
@@ -20,7 +24,11 @@ export default function Videos() {
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Something is wrong...😔</p>;
   return (
-    <div className="w-[100%] h-[calc(100vh-60px)] bg-[#0f0f0f] overflow-y-scroll text-white">
+    <div
+      className={`${
+        darkMode ? "bg-[#0f0f0f] text-white" : "bg-white text-[#0f0f0f]"
+      } w-[100%] h-[calc(100vh-60px)] overflow-y-scroll `}
+    >
       <div className="w-[81.25rem] mx-auto p-10">
         Videos {keyword ? `🔍${keyword}` : "🔥"}
         {videos && (

@@ -5,31 +5,44 @@
 :root {
   --primary: rgb(159, 159, 159);
   --secondary: cornflowerblue;
+  --color-scrollbar: white;
+  --color-scrollbar-track: white;
+  --color-scrollbar-thumb: rgb(93, 93, 93);
+}
+
+html.dark {
+  --color-scrollbar: #0f0f0f;
+  --color-scrollbar-track: #0f0f0f;
+  --color-scrollbar-thumb: #b6b6b6;
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--secondary) var(--primary);
 }
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 10px;
+  background-color: var(--color-scrollbar);
 }
 
 *::-webkit-scrollbar-track {
-  background: #0f0f0f;
+  background: var(--color-scrollbar-track);
   border-radius: 5px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--primary);
+  background-color: var(--color-scrollbar-thumb);
   border-radius: 14px;
-  border: 3px solid var(--primary);
+  border: 3px solid var(--color-scrollbar-thumb);
 }
 
-body {
+*::-webkit-scrollbar-corner {
+  background: var(--color-scrollbar-track);
+}
+
+*::scro body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
