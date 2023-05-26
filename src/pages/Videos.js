@@ -25,8 +25,8 @@ export default function Videos() {
         Videos {keyword ? `🔍${keyword}` : "🔥"}
         {videos && (
           <ul>
-            {videos.map((video, i) => (
-              <VideoCard key={i} video={video} />
+            {videos.map((video) => (
+              <VideoCard key={video.id} video={video} />
             ))}
           </ul>
         )}
