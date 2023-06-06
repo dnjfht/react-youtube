@@ -12,20 +12,20 @@ export default function Videos() {
   const { keyword } = useParams();
 
   const { darkMode } = useContext(DarkModeContext);
-  const { youtube } = useYoutubeApi();
+  const {youtube} = useYoutubeApi();
 
   const {
     isLoading,
     error,
     data: videos,
     // } = useQuery(["videos", keyword], () => search(keyword));
-  } = useQuery(["videos", keyword], () => youtube.search(keyword));
+  } = useQuery(["videos", keyword], () => youtube.search(keyword)));
 
   // const {
   //   isLoading,
   //   error,
   //   data: videos,
-  //   // } = useQuery(["videos", keyword], () => search(keyword)); (가장 이전 코드)
+  //   // } = useQuery(["videos", keyword], () => search(keyword));
   // } = useQuery(["videos", keyword], () => {
   //   const youtube = new FakeYoutube();
   //   return youtube.search(keyword);

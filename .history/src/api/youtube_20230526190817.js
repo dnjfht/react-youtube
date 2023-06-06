@@ -16,7 +16,6 @@ export default class Youtube {
   }
 
   async search(keyword) {
-    // static으로 메서드들을 정의하지 않으면 인스턴스 생성해야 가져다 사용할 수 있다.
     return keyword ? this.#searchByKeyword(keyword) : this.#listByTrendVideo();
   }
 

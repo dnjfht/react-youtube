@@ -25,7 +25,7 @@ export default function Videos() {
   //   isLoading,
   //   error,
   //   data: videos,
-  //   // } = useQuery(["videos", keyword], () => search(keyword)); (가장 이전 코드)
+  //   // } = useQuery(["videos", keyword], () => search(keyword));
   // } = useQuery(["videos", keyword], () => {
   //   const youtube = new FakeYoutube();
   //   return youtube.search(keyword);
