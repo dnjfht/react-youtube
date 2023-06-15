@@ -13,13 +13,12 @@ export default class Youtube {
   async #searchByKeyword(keyword) {
     return this.apiClient
       .search({
-        params: {
-          part: "snippet",
-          maxResults: 25,
-          type: "video",
-          q: keyword,
-        },
+        part: "snippet",
+        maxResults: 25,
+        type: "video",
+        q: keyword,
       })
+
       .then((res) => res.data.items) //
       .then((items) =>
         items.map((item) => {
@@ -29,15 +28,15 @@ export default class Youtube {
   }
 
   async #listByTrendVideo() {
-    return this.apiClient
-      .videos({
+    return this.httpClient
+      .get("videos", {
         params: {
           part: "snippet",
           maxResults: 25,
           type: "video",
           chart: "mostPopular",
         },
-      })
+      }) //
       .then((res) => res.data.items);
   }
 }

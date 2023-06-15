@@ -11,8 +11,8 @@ export default class Youtube {
   }
 
   async #searchByKeyword(keyword) {
-    return this.apiClient
-      .search({
+    return this.httpClient
+      .get("search", {
         params: {
           part: "snippet",
           maxResults: 25,
@@ -29,15 +29,15 @@ export default class Youtube {
   }
 
   async #listByTrendVideo() {
-    return this.apiClient
-      .videos({
+    return this.httpClient
+      .get("videos", {
         params: {
           part: "snippet",
           maxResults: 25,
           type: "video",
           chart: "mostPopular",
         },
-      })
+      }) //
       .then((res) => res.data.items);
   }
 }
