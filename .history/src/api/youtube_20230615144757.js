@@ -10,8 +10,6 @@ export default class Youtube {
       // axios 인스턴스가 상대 URL을 해당 인스턴스의 메서드에 전달하도록
       // "baseURL"을 설정하는 것이 편리할 수 있다.
 
-      // `params`는 요청과 함께 전송 될 URL 매개 변수.
-      // 일반 객체 이거나 URLSearchParams 객체여야 함.
       params: { key: process.env.REACT_APP_YOUTUBE_API_KEY },
       // 외부 파일(.env)에 환경변수를 정의하여 변수로 받아오는 이유는 보안과 유지보수에 용이하기 때문.
       // 웹,앱 개발을 하다보면 포트, DB관련 정보, API_KEY등.. 개발자 혼자서 또는 팀만 알아야 하는 값 즉, git, 오픈소스에 올리면 안되는 값들이 있다.
