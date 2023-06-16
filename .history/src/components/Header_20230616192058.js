@@ -52,12 +52,8 @@ export default function Header() {
             className={`${darkMode ? "text-white" : "text-[0f0f0f]"} text-6xl`}
           />
         </div>
-        <div
-          className={`${
-            appear ? "2xl:w-[54%]" : "2xl:w-1/2"
-          } flex flex-row items-center mx-auto`}
-        >
-          <div className="relative 2xl:w-[88%]">
+        <div className="flex flex-row items-center mx-auto 2xl:w-1/2">
+          <div className={`${appear ? "2xl:w-[90%]" : "2xl:w-[88%]"} relative`}>
             <IoIosSearch
               className={`${
                 appear ? "block" : "hidden "

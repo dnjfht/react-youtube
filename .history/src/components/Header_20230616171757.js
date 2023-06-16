@@ -52,12 +52,8 @@ export default function Header() {
             className={`${darkMode ? "text-white" : "text-[0f0f0f]"} text-6xl`}
           />
         </div>
-        <div
-          className={`${
-            appear ? "2xl:w-[54%]" : "2xl:w-1/2"
-          } flex flex-row items-center mx-auto`}
-        >
-          <div className="relative 2xl:w-[88%]">
+        <div className="flex flex-row items-center mx-auto 2xl:w-full">
+          <div className="relative">
             <IoIosSearch
               className={`${
                 appear ? "block" : "hidden "
@@ -68,9 +64,9 @@ export default function Header() {
               placeholder="검색"
               className={`${
                 appear
-                  ? "2xl:w-full pl-[3rem] border-[#4a7dff]"
-                  : "2xl:w-full pl-[1rem] border-[#303030]"
-              } h-[40px] rounded-l-full pr-1 box-border border-solid border-[0.6px] placeholder:text-[#888888] outline-none  
+                  ? "w-[36rem] pl-[3rem] border-[#4a7dff]"
+                  : "2xl:w-[33.75rem] pl-[1rem] border-[#303030]"
+              } h-[40px]  rounded-l-full pr-1 box-border border-solid border-[0.6px] placeholder:text-[#888888] outline-none  
               ${
                 darkMode
                   ? "bg-[#121212] text-white"
@@ -94,7 +90,7 @@ export default function Header() {
               darkMode
                 ? "border-[#ffffff36] bg-[#ffffff14]"
                 : "border-[#303030] bg-[#383838b8]"
-            } 2xl:w-[12%] h-[2.5rem] px-[1px] py-[6px] rounded-r-full box-border flex flex-row justify-center items-center border-solid border-[1px]`}
+            } w-[4rem] h-[2.5rem] px-[1px] py-[6px] rounded-r-full box-border flex flex-row justify-center items-center border-solid border-[1px]`}
             onClick={handleClickSearchBtn}
           >
             <IoIosSearch className="text-white text-[1.5rem]" />

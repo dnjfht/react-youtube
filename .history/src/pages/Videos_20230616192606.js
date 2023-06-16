@@ -44,7 +44,7 @@ export default function Videos() {
         darkMode ? "bg-[#0f0f0f] text-white" : "bg-white text-[#0f0f0f]"
       } w-full h-[calc(100vh-60px)] overflow-y-scroll `}
     >
-      <div className="xl:w-4/6 mx-auto py-10">
+      <div className="2xl:w-4/6 mx-auto p-10">
         {isLoading && <p>Loading...</p>}
         {error && <p>Something is wrong...😔</p>}
         Videos {keyword ? `🔍${keyword}` : "🔥"}

@@ -54,7 +54,7 @@ export default function Header() {
         </div>
         <div
           className={`${
-            appear ? "2xl:w-[54%]" : "2xl:w-1/2"
+            appear ? "" : "2xl:w-1/2"
           } flex flex-row items-center mx-auto`}
         >
           <div className="relative 2xl:w-[88%]">
