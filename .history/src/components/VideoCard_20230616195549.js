@@ -6,7 +6,7 @@ const truncate = (str, n) => {
 
 export default function VideoCard({ video }) {
   return (
-    <li className="2xl:w-[19.6%] xl:w-[24.4%] lg:w-[32.6%] md:w-[49.4%] sm:w-full w-full text-[0.9rem]">
+    <li className="2xl:w-[19.6%] xl:w-[24.4%] lg:w-[32.6%] md:w-[49.4%] sm:w-full text-[0.9rem]">
       <img
         className="w-full object-cover"
         src={video.snippet.thumbnails.medium.url}

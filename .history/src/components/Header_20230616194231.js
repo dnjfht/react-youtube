@@ -39,7 +39,7 @@ export default function Header() {
       <div
         className={`${
           darkMode ? "border-[#ffffff36]" : "border-[#7b7b7b7e]"
-        } lg:w-4/6 md:w-5/6 sm:w-[96%] w-[96%] h-[100%] mx-auto flex flex-row items-center justify-between p-2 pr-[36]px box-border border-solid border-b-[1px]`}
+        } xl:w-4/6 h-[100%] mx-auto flex flex-row items-center justify-between p-2 pr-[36]px box-border border-solid border-b-[1px]`}
       >
         <div
           className="flex flex-row hover:cursor-pointer"
@@ -54,10 +54,10 @@ export default function Header() {
         </div>
         <div
           className={`${
-            appear ? "sm:w-[54%] w-[54%]" : "sm:w-1/2 w-1/2"
+            appear ? "xl:w-[54%]" : "xl:w-1/2"
           } flex flex-row items-center mx-auto`}
         >
-          <div className="relative sm:w-[88%] w-[88%]">
+          <div className="relative xl:w-[88%]">
             <IoIosSearch
               className={`${
                 appear ? "block" : "hidden "
@@ -68,8 +68,8 @@ export default function Header() {
               placeholder="검색"
               className={`${
                 appear
-                  ? "sm:w-full w-full pl-[3rem] border-[#4a7dff]"
-                  : "sm:w-full w-full pl-[1rem] border-[#303030]"
+                  ? "2xl:w-full pl-[3rem] border-[#4a7dff]"
+                  : "2xl:w-full pl-[1rem] border-[#303030]"
               } h-[40px] rounded-l-full pr-1 box-border border-solid border-[0.6px] placeholder:text-[#888888] outline-none  
               ${
                 darkMode
@@ -94,7 +94,7 @@ export default function Header() {
               darkMode
                 ? "border-[#ffffff36] bg-[#ffffff14]"
                 : "border-[#303030] bg-[#383838b8]"
-            } sm:w-[12%] w-[12%] h-[2.5rem] px-[1px] py-[6px] rounded-r-full box-border flex flex-row justify-center items-center border-solid border-[1px]`}
+            } 2xl:w-[12%] h-[2.5rem] px-[1px] py-[6px] rounded-r-full box-border flex flex-row justify-center items-center border-solid border-[1px]`}
             onClick={handleClickSearchBtn}
           >
             <IoIosSearch className="text-white text-[1.5rem]" />

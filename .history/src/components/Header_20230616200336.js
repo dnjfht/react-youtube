@@ -94,7 +94,7 @@ export default function Header() {
               darkMode
                 ? "border-[#ffffff36] bg-[#ffffff14]"
                 : "border-[#303030] bg-[#383838b8]"
-            } sm:w-[12%] w-[12%] h-[2.5rem] px-[1px] py-[6px] rounded-r-full box-border flex flex-row justify-center items-center border-solid border-[1px]`}
+            } sm:w-[12%] h-[2.5rem] px-[1px] py-[6px] rounded-r-full box-border flex flex-row justify-center items-center border-solid border-[1px]`}
             onClick={handleClickSearchBtn}
           >
             <IoIosSearch className="text-white text-[1.5rem]" />
