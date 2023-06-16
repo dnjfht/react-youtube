@@ -49,7 +49,7 @@ export default function Videos() {
         {error && <p>Something is wrong...😔</p>}
         Videos {keyword ? `🔍${keyword}` : "🔥"}
         {videos && (
-          <ul className="flex flex-wrap justify-between w-full">
+          <ul className="flex flex-wrap w-1/5">
             {videos.map((video) => (
               <VideoCard key={video.id} video={video} />
             ))}
