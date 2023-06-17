@@ -5,8 +5,6 @@ const truncate = (str, n) => {
 };
 
 const timesAgo = (day) => {
-  // timeago.js라는 라이브러리를 사용해도 된다.
-
   const givenDate = new Date(day);
   const currentDate = new Date();
 

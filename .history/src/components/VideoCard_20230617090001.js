@@ -5,8 +5,6 @@ const truncate = (str, n) => {
 };
 
 const timesAgo = (day) => {
-  // timeago.js라는 라이브러리를 사용해도 된다.
-
   const givenDate = new Date(day);
   const currentDate = new Date();
 
@@ -24,18 +22,6 @@ const timesAgo = (day) => {
     // 주어진 날짜와 현재 날짜 사이의 월 수 계산
     (currentDate.getFullYear() - givenDate.getFullYear()) * 12 +
     (currentDate.getMonth() - givenDate.getMonth());
-
-  const years =
-    // 주어진 날짜와 현재 날짜 사이의 연도 차이 계산
-    currentDate.getFullYear() - givenDate.getFullYear();
-
-  return years > 0
-    ? years + "년 전"
-    : months > 0
-    ? months + "달 전"
-    : days > 0
-    ? days + "일 전"
-    : times + "시간 전";
 };
 
 // const monthsAgo = (day) => {
@@ -63,7 +49,7 @@ export default function VideoCard({ video }) {
         {truncate(video.snippet.channelTitle, 26)}
       </p>
       <p className="text-[#bdbdbd] mb-4">
-        {timesAgo(video.snippet.publishedAt)}
+        {`${timesAgo(video.snippet.publishedAt)}시간 전`}
       </p>
     </li>
   );

@@ -5,8 +5,6 @@ const truncate = (str, n) => {
 };
 
 const timesAgo = (day) => {
-  // timeago.js라는 라이브러리를 사용해도 된다.
-
   const givenDate = new Date(day);
   const currentDate = new Date();
 
@@ -29,9 +27,7 @@ const timesAgo = (day) => {
     // 주어진 날짜와 현재 날짜 사이의 연도 차이 계산
     currentDate.getFullYear() - givenDate.getFullYear();
 
-  return years > 0
-    ? years + "년 전"
-    : months > 0
+  return months > 0
     ? months + "달 전"
     : days > 0
     ? days + "일 전"
