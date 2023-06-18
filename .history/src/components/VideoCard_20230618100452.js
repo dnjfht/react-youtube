@@ -68,13 +68,13 @@ const timesAgo = (day) => {
 //   );
 // };
 
-export default function VideoCard({ video }) {
+export default function VideoCard({ video, id }) {
   const navigate = useNavigate();
 
   return (
     <li
       onClick={() => {
-        navigate(`/videos/watch/${video.id}`, { state: { video } });
+        navigate(`/videos/watch/${id}`);
       }}
       className="2xl:w-[19.6%] xl:w-[24.4%] lg:w-[32.6%] md:w-[49.4%] sm:w-full w-full text-[0.9rem]"
     >

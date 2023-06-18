@@ -74,7 +74,7 @@ export default function VideoCard({ video }) {
   return (
     <li
       onClick={() => {
-        navigate(`/videos/watch/${video.id}`, { state: { video } });
+        navigate(`/videos/watch/${videoid}`);
       }}
       className="2xl:w-[19.6%] xl:w-[24.4%] lg:w-[32.6%] md:w-[49.4%] sm:w-full w-full text-[0.9rem]"
     >

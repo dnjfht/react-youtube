@@ -55,6 +55,8 @@ const timesAgo = (day) => {
     : seconds + "초 전";
 };
 
+const navigate = useNavigate();
+
 // const monthsAgo = (day) => {
 //   // 주어진 날짜
 //   const givenDate = new Date(day);
@@ -68,13 +70,11 @@ const timesAgo = (day) => {
 //   );
 // };
 
-export default function VideoCard({ video }) {
-  const navigate = useNavigate();
-
+export default function VideoCard({ video, id }) {
   return (
     <li
       onClick={() => {
-        navigate(`/videos/watch/${video.id}`, { state: { video } });
+        navigate(`/videos/watch/:${video.id}`);
       }}
       className="2xl:w-[19.6%] xl:w-[24.4%] lg:w-[32.6%] md:w-[49.4%] sm:w-full w-full text-[0.9rem]"
     >

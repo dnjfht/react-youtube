@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 const truncate = (str, n) => {
   return str.length > n ? str.substring(0, n - 1) + "..." : str;
@@ -11,15 +10,9 @@ const timesAgo = (day) => {
   const givenDate = new Date(day);
   const currentDate = new Date();
 
-  // 주어진 날짜와 현재 날짜 사이의 초 차이 계산
-  const millisecondsPerSecond = 1000; // 1초는 1000밀리초입니다.
-  const seconds = Math.round(
-    (currentDate.getTime() - givenDate.getTime()) / millisecondsPerSecond
-  );
-
   // 주어진 날짜와 현재 날짜 사이의 분 차이 계산
   const millisecondsPerMinute = 60 * 1000; // 1분은 60초 * 1000밀리초입니다.
-  const minutes = Math.round(
+  const minutesAgo = Math.round(
     (currentDate.getTime() - givenDate.getTime()) / millisecondsPerMinute
   );
 
@@ -48,11 +41,7 @@ const timesAgo = (day) => {
     ? months + "달 전"
     : days > 0
     ? days + "일 전"
-    : times > 0
-    ? times + "시간 전"
-    : minutes > 0
-    ? minutes + "분 전"
-    : seconds + "초 전";
+    : times + "시간 전";
 };
 
 // const monthsAgo = (day) => {
@@ -69,15 +58,8 @@ const timesAgo = (day) => {
 // };
 
 export default function VideoCard({ video }) {
-  const navigate = useNavigate();
-
   return (
-    <li
-      onClick={() => {
-        navigate(`/videos/watch/${video.id}`, { state: { video } });
-      }}
-      className="2xl:w-[19.6%] xl:w-[24.4%] lg:w-[32.6%] md:w-[49.4%] sm:w-full w-full text-[0.9rem]"
-    >
+    <li className="2xl:w-[19.6%] xl:w-[24.4%] lg:w-[32.6%] md:w-[49.4%] sm:w-full w-full text-[0.9rem]">
       <img
         className="w-full object-cover"
         src={video.snippet.thumbnails.medium.url}
