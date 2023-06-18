@@ -21,10 +21,7 @@ export default function Detail() {
         />
         <div>
           <h2>{video.snippet.title}</h2>
-          <ChannelInfo
-            id={video.snippet.channelId}
-            title={video.snippet.channelTitle}
-          />
+          <ChannelInfo id={video.snippet.channelId} />
         </div>
       </div>
     </div>
