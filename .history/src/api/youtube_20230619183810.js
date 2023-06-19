@@ -26,8 +26,11 @@ export default class Youtube {
           relatedToVideoId: id,
         },
       })
-      .then((res) =>
-        res.data.items.map((item) => ({ ...item, id: item.id.videoId }))
+      .then((res) => res.data.items) //
+      .then((items) =>
+        items.map((item) => {
+          return { ...item, id: item.id.videoId };
+        })
       );
   }
 
@@ -41,8 +44,11 @@ export default class Youtube {
           q: keyword,
         },
       })
-      .then((res) =>
-        res.data.items.map((item) => ({ ...item, id: item.id.videoId }))
+      .then((res) => res.data.items) //
+      .then((items) =>
+        items.map((item) => {
+          return { ...item, id: item.id.videoId };
+        })
       );
   }
 

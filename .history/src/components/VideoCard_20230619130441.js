@@ -74,7 +74,6 @@ export default function VideoCard({ video }) {
   // react-router-dom에서 부가적인 요소를 전달하고 싶을 땐
   // 네트워크 통신을 해서 데이터를 가져오는 것이 아니라,
   // 이미 데이터가 이곳에 있기 때문에(video) 함께 전달해주면 된다.
-  // 부가적인 객체를 전달할 때는 {state : {video: video}} 이런 식으로 전달한다.
 
   return (
     <li

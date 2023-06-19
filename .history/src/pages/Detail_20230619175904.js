@@ -1,7 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import ChannelInfo from "../components/ChannelInfo";
-import RelatedVideos from "../components/RelatedVideos";
 
 export default function Detail() {
   const {
@@ -31,9 +30,7 @@ export default function Detail() {
           </div>
         </article>
 
-        <section>
-          <RelatedVideos id={video.id} />
-        </section>
+        <section></section>
       </section>
     </div>
   );

@@ -8,27 +8,10 @@ export default class Youtube {
     return keyword ? this.#searchByKeyword(keyword) : this.#listByTrendVideo();
   }
 
-  async channelImageURL(id) {
-    return this.apiClient
-      .channels({
-        params: { part: "snippet", id },
-      })
-      .then((res) => res.data.items[0].snippet.thumbnails.default.url);
-  }
-
-  async relatedVideos(id) {
-    return this.apiClient
-      .search({
-        params: {
-          part: "snippet",
-          maxResults: 25,
-          type: "video",
-          relatedToVideoId: id,
-        },
-      })
-      .then((res) =>
-        res.data.items.map((item) => ({ ...item, id: item.id.videoId }))
-      );
+  async channelDatail(id) {
+    return this.apiClient.channels({
+      params: { part: "snippet", id },
+    });
   }
 
   async #searchByKeyword(keyword) {
@@ -41,8 +24,11 @@ export default class Youtube {
           q: keyword,
         },
       })
-      .then((res) =>
-        res.data.items.map((item) => ({ ...item, id: item.id.videoId }))
+      .then((res) => res.data.items) //
+      .then((items) =>
+        items.map((item) => {
+          return { ...item, id: item.id.videoId };
+        })
       );
   }
 

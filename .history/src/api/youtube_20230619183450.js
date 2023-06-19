@@ -17,18 +17,14 @@ export default class Youtube {
   }
 
   async relatedVideos(id) {
-    return this.apiClient
-      .search({
-        params: {
-          part: "snippet",
-          maxResults: 25,
-          type: "video",
-          relatedToVideoId: id,
-        },
-      })
-      .then((res) =>
-        res.data.items.map((item) => ({ ...item, id: item.id.videoId }))
-      );
+    return this.apiClient.search({
+      params: {
+        part: "snippet",
+        maxResults: 25,
+        type: "video",
+        relatedToVideoId: id,
+      },
+    });
   }
 
   async #searchByKeyword(keyword) {
@@ -41,8 +37,11 @@ export default class Youtube {
           q: keyword,
         },
       })
-      .then((res) =>
-        res.data.items.map((item) => ({ ...item, id: item.id.videoId }))
+      .then((res) => res.data.items) //
+      .then((items) =>
+        items.map((item) => {
+          return { ...item, id: item.id.videoId };
+        })
       );
   }
 

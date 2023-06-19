@@ -8,11 +8,11 @@ export default function ChannelInfo({ id, title }) {
     error,
     isLoading,
     data: url,
-  } = useQuery(["channel", id], () => youtube.channelImageURL(id));
+  } = useQuery(["channel", id], () => youtube.ChannelImageURL(id));
 
   return (
     <div>
-      {url && <img src={url} alt={title} />}
+      <p>{id}</p>
       <p>{title}</p>
     </div>
   );

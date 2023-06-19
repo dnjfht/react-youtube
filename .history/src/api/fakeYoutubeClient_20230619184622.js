@@ -7,7 +7,7 @@ export default class FakeYoutubeClient {
     return params.relatedToVideoId
       ? axios.get(`/data/ListByRelatedVideo.json`)
       : axios.get(`/data/ListByKeyword.json`);
-    // return axios.get(`/data/${params.relatedToVideoId ? "ListByRelatedVideo" : "ListByKeyword"}.json`);
+    // return axios.get(`/data/${params.relatedToVideoId ? "ListByRelatedVideo" : "ListByKeyword"}.json`)
   }
 
   async videos() {
