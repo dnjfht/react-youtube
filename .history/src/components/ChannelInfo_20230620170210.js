@@ -9,7 +9,7 @@ export default function ChannelInfo({ id, title }) {
   );
 
   return (
-    <div className="w-full pt-3 pb-4 flex items-center">
+    <div className="w-full pt-3 pb-5 flex items-center">
       {url && (
         <img
           className="w-[2.5rem] h-[40px] object-cover rounded-full"

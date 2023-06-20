@@ -38,8 +38,8 @@ export default function Detail() {
               title={video.snippet.channelTitle}
             />
 
-            <div className="bg-[#ffffff1a] rounded-xl p-4 box-border mb-10 hover:bg-[#ffffff3d] cursor-pointer transition-all duration-500">
-              <p className="mb-2">{timesAgo(video.snippet.publishedAt)}</p>
+            <div className="bg-[#ffffff1a] rounded-xl p-4 box-border mb-10 ">
+              <p className="mb-1">{timesAgo(video.snippet.publishedAt)}</p>
               <p>{video.snippet.description}</p>
             </div>
           </div>
