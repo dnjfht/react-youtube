@@ -1,4 +1,5 @@
-<h1>mock data X youtube API X react router dom X tailwind X react query</h1>
+<h1>Mock data X Youtube API X React Router Dom X Tailwind X React Query</h1>
+<h1>를 사용한 Youtube 만들기</h1>
 
 ![image](https://github.com/dnjfht/react-youtube/assets/117057638/50563c68-302e-4270-b4cf-7c6cf6f3942c)
 ![image](https://github.com/dnjfht/react-youtube/assets/117057638/4c54db28-8ee0-4c16-aab7-249a28803553)
