@@ -85,7 +85,7 @@ export default function VideoCard({ video, related }) {
         related
           ? "w-full flex mb-3 text-[0.76rem]"
           : "2xl:w-[19.6%] xl:w-[24.4%] lg:w-[32.6%] md:w-[49.4%] sm:w-full w-full text-[0.9rem]"
-      } cursor-pointer`}
+      }`}
     >
       <img
         className={`${

@@ -85,7 +85,7 @@ export default function VideoCard({ video, related }) {
         related
           ? "w-full flex mb-3 text-[0.76rem]"
           : "2xl:w-[19.6%] xl:w-[24.4%] lg:w-[32.6%] md:w-[49.4%] sm:w-full w-full text-[0.9rem]"
-      } cursor-pointer`}
+      }`}
     >
       <img
         className={`${
@@ -94,17 +94,13 @@ export default function VideoCard({ video, related }) {
         src={video.snippet.thumbnails.medium.url}
       />
 
-      <div className={`${related ? "xl:w-1/2 sm:w-3/4 w-3/4 ml-2" : "w-full"}`}>
+      <div className={`${related ? "w-1/2 ml-2" : "w-full"}`}>
         <p className={`${related ? "xl:block sm:hidden hidden" : ""} mt-1`}>{`${
           related
             ? truncate(video.snippet.title, 28)
             : truncate(video.snippet.title, 54)
         }`}</p>
-        <p
-          className={`${
-            related ? "block xl:hidden sm:block" : "hidden"
-          } text-[0.875rem] font-semibold`}
-        >
+        <p className={`${related ? "block xl:hidden sm:block" : "hidden"}`}>
           {video.snippet.title}
         </p>
         <p className="text-[#bdbdbd] mt-2">
