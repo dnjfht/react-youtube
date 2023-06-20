@@ -25,7 +25,7 @@ export default function Detail() {
             id="player"
             type="texy/html"
             width="100%"
-            height="640px"
+            height="640"
             src={`http://www.youtube.com/embed/${video.id}`}
             frameBorder="0"
           />

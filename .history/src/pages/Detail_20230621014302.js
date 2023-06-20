@@ -24,7 +24,7 @@ export default function Detail() {
           <iframe
             id="player"
             type="texy/html"
-            width="100%"
+            width="100vw"
             height="640px"
             src={`http://www.youtube.com/embed/${video.id}`}
             frameBorder="0"
