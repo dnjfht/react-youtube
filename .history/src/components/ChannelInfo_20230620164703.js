@@ -4,9 +4,11 @@ import { useQuery } from "@tanstack/react-query";
 
 export default function ChannelInfo({ id, title }) {
   const { youtube } = useYoutubeApi();
-  const { data: url } = useQuery(["channel", id], () =>
-    youtube.channelImageURL(id)
-  );
+  const {
+    error,
+    isLoading,
+    data: url,
+  } = useQuery(["channel", id], () => youtube.channelImageURL(id));
 
   return (
     <div className="w-full py-3 flex items-center">

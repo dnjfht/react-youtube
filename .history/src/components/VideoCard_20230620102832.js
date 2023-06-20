@@ -5,7 +5,7 @@ const truncate = (str, n) => {
   return str.length > n ? str.substring(0, n - 1) + "..." : str;
 };
 
-export const timesAgo = (day) => {
+const timesAgo = (day) => {
   // timeago.js라는 라이브러리를 사용해도 된다.
 
   const givenDate = new Date(day);
@@ -83,30 +83,21 @@ export default function VideoCard({ video, related }) {
       }}
       className={`${
         related
-          ? "2xl:w-full flex mb-3 text-[0.76rem]"
-          : "2xl:w-[19.6%] xl:w-[24.4%] lg:w-[32.6%] md:w-[49.4%] sm:w-full w-full text-[0.9rem]"
-      }`}
+          ? "2xl:w-full flex mb-[10p]"
+          : "2xl:w-[19.6%] xl:w-[24.4%] lg:w-[32.6%] md:w-[49.4%] sm:w-full w-full"
+      } text-[0.9rem]`}
     >
       <img
-        className={`${
-          related ? "w-1/2 h-[94px] rounded-md" : "w-full"
-        } object-cover`}
+        className={`${related ? "w-1/2 rounded-md" : "w-full"} object-cover`}
         src={video.snippet.thumbnails.medium.url}
       />
-
-      <div className={`${related ? "w-1/2 ml-2" : "w-full"}`}>
-        <p className="mt-1">{`${
-          related
-            ? truncate(video.snippet.title, 28)
-            : truncate(video.snippet.title, 54)
-        }`}</p>
-        <p className="text-[#bdbdbd] mt-2">
-          {truncate(video.snippet.channelTitle, 26)}
-        </p>
-        <p className={`${related ? "mb-0" : "mb-4"} text-[#bdbdbd]`}>
-          {timesAgo(video.snippet.publishedAt)}
-        </p>
-      </div>
+      <p className="mt-1">{truncate(video.snippet.title, 54)}</p>
+      <p className="text-[#bdbdbd] mt-2">
+        {truncate(video.snippet.channelTitle, 26)}
+      </p>
+      <p className="text-[#bdbdbd] mb-4">
+        {timesAgo(video.snippet.publishedAt)}
+      </p>
     </li>
   );
 }

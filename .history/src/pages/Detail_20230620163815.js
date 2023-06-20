@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import ChannelInfo from "../components/ChannelInfo";
 import RelatedVideos from "../components/RelatedVideos";
 import { DarkModeContext } from "../provider/DarkModeContext";
-import { timesAgo } from "../components/VideoCard";
 
 export default function Detail() {
   const {
@@ -30,18 +29,12 @@ export default function Detail() {
             frameBorder="0"
           />
           <div className="mt-4">
-            <h2 className="text-[#f1f1f1] text-[1.25rem] font-semibold">
-              {video.snippet.title}
-            </h2>
+            <h2>{video.snippet.title}</h2>
             <ChannelInfo
               id={video.snippet.channelId}
               title={video.snippet.channelTitle}
             />
-
-            <div className="bg-[#ffffff1a] rounded-xl p-4 box-border mb-10">
-              <p>{timesAgo(video.snippet.publishedAt)}</p>
-              <p>{video.snippet.description}</p>
-            </div>
+            <p>{video.snippet.description}</p>
           </div>
         </article>
 

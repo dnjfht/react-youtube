@@ -38,7 +38,7 @@ export default function Detail() {
               title={video.snippet.channelTitle}
             />
 
-            <div className="bg-[#ffffff1a] rounded-xl p-4 box-border mb-10">
+            <div className="bg-[#ffffff1a]">
               <p>{timesAgo(video.snippet.publishedAt)}</p>
               <p>{video.snippet.description}</p>
             </div>

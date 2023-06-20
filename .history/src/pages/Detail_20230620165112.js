@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import ChannelInfo from "../components/ChannelInfo";
 import RelatedVideos from "../components/RelatedVideos";
 import { DarkModeContext } from "../provider/DarkModeContext";
-import { timesAgo } from "../components/VideoCard";
 
 export default function Detail() {
   const {
@@ -38,7 +37,7 @@ export default function Detail() {
               title={video.snippet.channelTitle}
             />
 
-            <div className="bg-[#ffffff1a] rounded-xl p-4 box-border mb-10">
+            <div>
               <p>{timesAgo(video.snippet.publishedAt)}</p>
               <p>{video.snippet.description}</p>
             </div>
