@@ -95,16 +95,12 @@ export default function VideoCard({ video, related }) {
       />
 
       <div className={`${related ? "w-1/2 ml-2" : "w-full"}`}>
-        <p className={`${related ? "xl:block sm:hidden hidden" : ""} mt-1`}>{`${
+        <p className="mt-1">{`${
           related
             ? truncate(video.snippet.title, 28)
             : truncate(video.snippet.title, 54)
         }`}</p>
-        <p
-          className={`${
-            related ? "block xl:hidden sm:block block " : "hidden"
-          }`}
-        >
+        <p className={`${related ? "block " : "hidden"}`}>
           {video.snippet.title}
         </p>
         <p className="text-[#bdbdbd] mt-2">
