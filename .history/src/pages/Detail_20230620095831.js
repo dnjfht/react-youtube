@@ -10,9 +10,9 @@ export default function Detail() {
   console.log(video);
 
   return (
-    <div className="w-[100%] h-[calc(100vh-60px)] pt-[12px] bg-[#0f0f0f] overflow-y-scroll text-white">
-      <section className="lg:w-4/6 md:w-5/6 sm:w-[96%] w-[96%] mx-auto flex">
-        <article className="lg:w-9/12">
+    <div className="w-[100%] h-[calc(100vh-60px)] bg-[#0f0f0f] overflow-y-scroll text-white">
+      <section className="w-full">
+        <article className="lg:w-4/6 md:w-5/6 sm:w-[96%] w-[96%] mx-auto">
           <iframe
             id="player"
             type="texy/html"
@@ -31,7 +31,7 @@ export default function Detail() {
           </div>
         </article>
 
-        <section className="lg:w-3/12 lg:pl-[1.4rem]">
+        <section>
           <RelatedVideos id={video.id} />
         </section>
       </section>

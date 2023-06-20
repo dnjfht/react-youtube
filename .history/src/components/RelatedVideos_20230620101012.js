@@ -10,17 +10,15 @@ export default function RelatedVideos({ id }) {
     isLoading,
     data: videos,
   } = useQuery(["related", id], () => youtube.relatedVideos(id));
-
-  const related = true;
   return (
     <div className="w-full">
       {isLoading && <p>Loading...</p>}
       {error && <p>Something is wrong...😔</p>}
 
       {videos && (
-        <ul className="w-full">
+        <ul>
           {videos.map((video) => (
-            <VideoCard key={video.id} video={video} related={related} />
+            <VideoCard key={video.id} video={video} />
           ))}
         </ul>
       )}

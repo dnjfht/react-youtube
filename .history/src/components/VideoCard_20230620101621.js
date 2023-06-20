@@ -88,7 +88,7 @@ export default function VideoCard({ video, related }) {
       } text-[0.9rem]`}
     >
       <img
-        className={`${related ? "w-1/2" : "w-full"}  object-cover`}
+        className={`${related ? "" : ""} w-full object-cover`}
         src={video.snippet.thumbnails.medium.url}
       />
       <p className="mt-1">{truncate(video.snippet.title, 54)}</p>

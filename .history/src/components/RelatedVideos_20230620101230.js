@@ -11,7 +11,7 @@ export default function RelatedVideos({ id }) {
     data: videos,
   } = useQuery(["related", id], () => youtube.relatedVideos(id));
 
-  const related = true;
+  const related = "related";
   return (
     <div className="w-full">
       {isLoading && <p>Loading...</p>}
@@ -20,7 +20,7 @@ export default function RelatedVideos({ id }) {
       {videos && (
         <ul className="w-full">
           {videos.map((video) => (
-            <VideoCard key={video.id} video={video} related={related} />
+            <VideoCard key={video.id} video={video} />
           ))}
         </ul>
       )}

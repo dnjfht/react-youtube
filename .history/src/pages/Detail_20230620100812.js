@@ -31,7 +31,7 @@ export default function Detail() {
           </div>
         </article>
 
-        <section className="lg:w-3/12 lg:pl-[1.4rem]">
+        <section className="lg:w-3/12 lg:pl-[1.2rem]">
           <RelatedVideos id={video.id} />
         </section>
       </section>
