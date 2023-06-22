@@ -8,7 +8,6 @@ export default function ChannelInfo({ id, title }) {
     ["channel", id],
     () => youtube.channelImageURL(id),
     { staleTime: 1000 * 60 * 5 }
-    // 채널 이미지가 빈번히 바뀌는 것이 아니기 때문에
   );
 
   return (

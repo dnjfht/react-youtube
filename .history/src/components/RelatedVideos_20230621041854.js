@@ -11,8 +11,8 @@ export default function RelatedVideos({ id }) {
     data: videos,
   } = useQuery(["related", id], () => youtube.relatedVideos(id), {
     staleTime: 1000 * 60 * 5,
-    // 연관된 이미지가 빈번히 바뀌는 것이 아니기 때문
   });
+  // 연관된 이미지가 빈번히 바뀌는 것이 아니기 때문에);
 
   const related = true;
   return (

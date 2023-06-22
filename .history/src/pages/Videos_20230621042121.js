@@ -20,8 +20,7 @@ export default function Videos() {
     data: videos,
     // } = useQuery(["videos", keyword], () => search(keyword));
   } = useQuery(["videos", keyword], () => youtube.search(keyword), {
-    staleTime: 1000 * 60 * 1,
-    // 새로운 영상이 생각보다 자주 올라오므로 caching time을 1분 정도로 지정.
+    staleTime: 1000 * 60 * 1, // 새로운 영상이 생각보다 자주 올라오므로 caching time을 1분 정도로 지정.
   });
 
   // const {
